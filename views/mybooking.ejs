@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings - TravelX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-600">TravelX</h1>
+      <div class="flex items-center space-x-3">
+        <a href="/destination" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Book More</a>
+        <a href="/logout" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">🚪 Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bookings Section -->
+  <section class="pt-28 pb-12 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-10">📅 My Bookings</h2>
+
+    <div class="max-w-4xl mx-auto space-y-6">
+      <% if (bookings.length > 0) { %>
+        <% bookings.forEach(b => { %>
+          <div class="bg-white shadow-lg rounded-xl p-6 flex justify-between items-center hover:shadow-xl transition">
+            <div>
+              <p class="text-xl font-semibold text-gray-800"><%= b.destination %></p>
+              <p class="text-gray-600">📆 <%= b.date.toDateString() %></p>
+              <p class="text-gray-600">👥 <%= b.persons %> persons</p>
+            </div>
+            <div class="flex space-x-3">
+                  <form action="/edit/<%= b._id %>" method="get">
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">✏️ Edit</button>
+                  </form>
+                  <form action="/cancel/<%= b._id %>" method="post" onsubmit="return confirm('Are you sure you want to cancel this booking?');">
+                    <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">❌ Cancel</button>
+                  </form>
+                </div>
+
+          </div>                
+        <% }) %>
+      <% } else { %>
+        <!-- Empty state -->
+        <div class="text-center bg-white shadow-md rounded-xl p-10">
+          <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="No bookings"
+               class="w-28 mx-auto mb-4 opacity-80">
+          <p class="text-gray-600 text-lg mb-4">You don’t have any bookings yet.</p>
+          <a href="/destination" class="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+            ➕ Book Your First Trip
+          </a>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center py-6 mt-10">
+    <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

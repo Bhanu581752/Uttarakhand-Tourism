@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-400 via-indigo-200 to-purple-300 min-h-screen flex items-center justify-center">
+
+  <!-- Profile Card -->
+  <div class="relative bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-10 w-full max-w-lg text-center border border-gray-200">
+
+    <!-- Glow Effect -->
+    <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-500 blur-2xl opacity-30"></div>
+
+    <!-- Profile Header -->
+    <div class="mb-6">
+      <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-4xl text-white shadow-lg">
+        👤
+      </div>
+      <h1 class="text-3xl font-extrabold text-gray-800 mt-4">Your Profile</h1>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="space-y-3 text-gray-700 text-lg">
+      <p><span class="font-semibold text-gray-900">Username:</span> <%= user.username %></p>
+      <p><span class="font-semibold text-gray-900">Email:</span> <%= user.email %></p>
+      <p><span class="font-semibold text-gray-900">Age:</span> <%= user.age %></p>
+      <p><span class="font-semibold text-gray-900">Role:</span> <%= user.role %></p>
+    </div>
+
+    <!-- Actions -->
+    <div class="mt-8 flex flex-col gap-3">
+      <a href="/" class="bg-blue-600 text-white px-5 py-3 rounded-xl font-medium hover:bg-blue-700 shadow-md transition">🏠 Home</a>
+
+      <% if (user.role!=="admin"){%>
+      <a href="/mybookings" class="bg-green-600 text-white px-5 py-3 rounded-xl font-medium hover:bg-green-700 shadow-md transition">📖 My Bookings</a>
+      <%}%>
+      <a href="/logout" class="bg-red-500 text-white px-5 py-3 rounded-xl font-medium hover:bg-red-600 shadow-md transition">🚪 Logout</a>
+    </div>
+  </div>
+
+</body>
+</html>
+

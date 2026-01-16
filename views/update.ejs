@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Destination</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <div class="max-w-md mx-auto mt-20 bg-white p-8 rounded-xl shadow-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center">update Destination</h1>
+
+    <form action="/update/<%=destination.name%>" method="POST" class="space-y-4">
+      <div>
+        <label class="block font-semibold mb-1">Destination Name</label>
+        <input type="text" name="name" class="w-full p-2 border rounded-lg" value="<%= destination.name%>">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Image URL</label>
+        <input type="text" name="image" class="w-full p-2 border rounded-lg" value="<%=destination.image%>">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Description</label>
+        <textarea name="description" class="w-full p-2 border rounded-lg" rows="3" ><%= destination.description%></textarea>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Duration</label>
+        <input type="text" name="duration" class="w-full p-2 border rounded-lg" placeholder="e.g., 3 Days"  value="<%=destination.duration%>">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Price (₹)</label>
+        <input type="number" name="price" class="w-full p-2 border rounded-lg" value="<%= destination.price%>">
+      </div>
+
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">update Destination</button>
+    </form>
+  </div>
+
+</body>
+</html>

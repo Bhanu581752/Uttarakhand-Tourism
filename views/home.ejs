@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uttarakhand Tourism</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    .hero-bg {
+      transition: background-image 1s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-green-700">UK-TourismExplorer</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="hover:text-green-700">Home</a></li>
+        <li><a href="/destination" class="hover:text-green-700">Destinations</a></li>
+        <li><a href="#about" class="hover:text-green-700">About</a></li>
+        <li><a href="#contact" class="hover:text-green-700">Contact</a></li>
+      </ul>
+      <div class="flex items-center space-x-3 ml-10">
+  <!-- Book Now Button -->
+
+  <% if (user.role!=="admin"){%>
+  <a href="/destination" class="bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700">
+    Book Now
+  </a>
+   <%}%>
+  <!-- Profile Icon -->
+  <a href="/profile" class="text-gray-700 hover:text-green-700 text-2xl">
+    <i class="bi bi-person-circle"></i>
+  </a>
+</div>
+
+    </div>
+  </nav>
+
+<!-- Hero Section -->
+<section id="hero"
+  class="relative bg-cover bg-center h-screen flex items-center justify-center transition-all duration-1000">
+
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <div class="relative text-center text-white z-10">
+    <h2 class="text-4xl md:text-6xl font-bold">Discover Uttarakhand</h2>
+    <p class="mt-4 text-lg">Explore the beauty of the Himalayas</p>
+    <a href="/destination"
+       class="mt-6 inline-block bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700">
+       Explore Now
+    </a>
+  </div>
+</section>
+
+
+
+  <!-- Popular Destinations -->
+  <section id="destinations" class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Top Destinations in Uttarakhand</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Nainital -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="https://media.tripinvites.com/places/nainital/naini-lake/picturesque-nainital-lake-featured.jpg"
+             alt="Nainital" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold">Nainital</h3>
+          <p class="mt-2 text-gray-600">Famous for its beautiful lake, boat rides, and hill station vibes.</p>
+        </div>
+      </div>
+
+      <!-- Auli -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="https://cdn.pixabay.com/photo/2019/07/03/16/00/india-4314882_1280.jpg"
+             alt="Auli" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold">Auli</h3>
+          <p class="mt-2 text-gray-600">A skiing paradise with stunning Himalayan views.</p>
+        </div>
+      </div>
+
+      <!-- Kedarnath -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.YQj2Themksw6bpGPlkLShQHaFw?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Kedarnath" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold">Kedarnath</h3>
+          <p class="mt-2 text-gray-600">One of the Char Dham pilgrimage sites, surrounded by mountains.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6 md:flex md:items-center">
+      <div class="md:w-1/2">
+        <img src="https://s3.india.com/travel/wp-content/uploads/2016/06/shutterstock_283593491.jpg"
+             alt="About Uttarakhand" class="rounded-lg shadow-md">
+      </div>
+      <div class="md:w-1/2 md:pl-10 mt-8 md:mt-0">
+        <h2 class="text-3xl font-bold">Why Visit Uttarakhand?</h2>
+        <p class="mt-4 text-gray-600">Known as the "Land of the Gods", Uttarakhand offers a blend of spiritual bliss, thrilling adventures, and breathtaking Himalayan landscapes. Whether it's trekking in the mountains, rafting in the Ganga, or visiting Char Dham temples — this state has it all.</p>
+        <a href="#book" class="mt-6 inline-block bg-green-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-green-700">Plan Your Trip</a>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Get In Touch With Us</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Email -->
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-green-600 text-4xl mb-4">
+          <i class="bi bi-envelope"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Email Us</h3>
+        <p class="text-gray-600">Admin@uttarakhandtourism.com</p>
+        <p class="text-gray-600">Traveller@uttarakhandtourism.com</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-green-600 text-4xl mb-4">
+          <i class="bi bi-telephone"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Call Us</h3>
+        <p class="text-gray-600">+91 7834883284</p>
+        <p class="text-gray-600">+91 9876543210</p>
+      </div>
+
+      <!-- Address -->
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-green-600 text-4xl mb-4">
+          <i class="bi bi-geo-alt"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Visit Us</h3>
+        <p class="text-gray-600">Tourism Board, Nainital</p>
+        <p class="text-gray-600">Uttarakhand, India</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+      <h3 class="text-2xl font-bold mb-6 text-center">Send us a Message</h3>
+      <form class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600" required>
+          <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600" required>
+        </div>
+        <input type="text" placeholder="Subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600" required>
+        <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600 resize-none" required></textarea>
+        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="flex justify-center gap-6 mt-12">
+      <a href="https://www.facebook.com/login.php/" class="text-green-600 text-3xl hover:text-green-700 transition-colors">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="#" class="text-green-600 text-3xl hover:text-green-700 transition-colors">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="#" class="text-green-600 text-3xl hover:text-green-700 transition-colors">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://youtu.be/xyYmEugvcyE?si=WNTfyT-9u_an0tGG" class="text-green-600 text-3xl hover:text-green-700 transition-colors">
+        <i class="bi bi-youtube"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white text-center py-6 mt-10">
+    <p>&copy; 2025 Uttarakhand Tourism. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script for Dynamic Background -->
+  <script>
+
+    const uttarakhandImages = [
+  // Himalayas landscape
+  "https://th.bing.com/th/id/R.9c480efaf92bdc28d5f7b0ca0f9a0a1b?rik=FzB51d%2bDDBEPcw&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f111963-Nepal-Himalayas-mountain-nature-landscape-hill-trees.jpg&ehk=D%2bl5p66imWXMySjvVgxmCtf3G3Hg9rSQP%2ffdQD0%2breA%3d&risl=&pid=ImgRaw&r=0",
+
+   "https://images.prismic.io/indiahike/226b9030-85aa-4032-a0a0-1562d697ff53_ValleyOfFlowers+-+Pavan+Jain+-+Blooming+flowers+of+the+valley.jpg?auto=compress",
+   "https://i.pinimg.com/originals/c9/64/65/c964657dafa1e9d963ffd5f00ee067a2.jpg",
+   "https://static.toiimg.com/photo/msid-98653295,width-96,height-65.cms",
+   "https://www.epicyatra.com/wp-content/uploads/2024/09/chardham-yatra-offline-registrations-1.jpg",
+   "https://www.revv.co.in/blogs/wp-content/uploads/2020/06/Uttarakhand.jpeg",
+   "https://www.tripnstay.com/wp-content/uploads/2018/01/uttr12.jpg",
+   "https://travelogyindia.b-cdn.net/storage/app/upload/auli.jpg",
+   "https://tse3.mm.bing.net/th/id/OIP.ZeFdihhp2IZ61-Zj-oCfrQHaEo?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+   "https://www.starlinetravels.com/wp-content/uploads/2022/08/Uttarakhand-Tour.jpeg",
+   "https://travel.geek.nz/wp-content/uploads/2021/09/BrahmaTal-in-Uttarakhand-India-Tejashvi-Verma-1024x576.jpg",
+   "https://www.holidify.com/images/cmsuploads/compressed/Rishikesh_-_Lakshman_Jhula_20171024162853.jpg",
+   "https://www.chopta.in/wp-content/uploads/2020/02/chopta-iconic-picture.jpg",
+   "https://destinationstourpackages.com/wp-content/uploads/2022/11/Top-7-tourist-places-in-Uttarakhand-2.jpg",
+   "https://www.holidify.com/images/bgImages/UTTARAKHAND.jpg",
+   "https://indotoursadventures.com/public/storage/blogs/a5160ff72b8591a242f1fe76dc5fe7f3.jpg",
+   "https://st1.photogallery.ind.sh/wp-content/uploads/indiacom/askot-lies-between-pithoragarh-and-dharchula-201610-1476691127.jpg?impolicy=Medium_Widthonly&w=700",
+   "https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2016/06/kedarnath.jpg",
+   "https://etimg.etb2bimg.com/photo/77994007.cms",
+   "https://www.insightindiavoyage.com/wp-content/uploads/2019/12/uttarakhand.jpg",
+   "https://www.theindia.co.in/blog/wp-content/uploads/2020/08/Chakrata.jpg",
+   "https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_Rishikesh_tv_destination_img_4_l_932_1395.jpg",
+   "https://www.holidify.com/images/bgImages/NAINITAL.jpg",
+   "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/01/Rishikesh-one-of-the-bst-places-to-visit-in-uttarakhand.jpg",
+   "https://c.myholidays.com/blog/2023/7/251612_Offbeat%20places%20in%20Uttarakhand.webp",
+   "https://rishikeshdaytour.com/blog/wp-content/uploads/2023/08/Places-to-visit-in-Uttarakhand.jpg",
+
+
+
+  ]
+
+  // Pick random background for hero
+  const images = uttarakhandImages; // from the collection above
+let i = 0;
+const hero = document.getElementById("hero");
+
+setInterval(() => {
+  hero.style.backgroundImage = `url(${images[i]})`;
+  i = (i + 1) % images.length;
+}, 2000); // change every 5s
+
+  </script>
+
+</body>
+</html>
